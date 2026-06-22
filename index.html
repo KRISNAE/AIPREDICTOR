@@ -85,6 +85,780 @@ body.predictor-open #emptyState{
   display:none !important;
 }
 
+
+/* === RESPONSIVE FINAL V2 === */
+/* DESKTOP: Kotak 1 gambar kiri, Kotak 2 NEXT MATCH kanan, Kotak 3 COMPLETED MATCH bawah */
+.completed-section-clean{
+  max-width:1360px;
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+.next-match-section{width:100%;}
+
+/* DESKTOP / LAPTOP */
+@media(min-width:1024px){
+  section.max-w-\[1500px\]{
+    max-width:1360px!important;
+  }
+
+  .main-grid-clean{
+    display:block!important;
+  }
+
+  .result-area-clean{
+    max-width:1360px!important;
+    width:100%!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:minmax(430px, 1fr) minmax(520px, 1fr)!important;
+    gap:34px!important;
+    align-items:start!important;
+  }
+
+  #emptyState{
+    width:100%!important;
+    max-width:none!important;
+    aspect-ratio:1/1!important;
+    min-height:430px!important;
+    max-height:560px!important;
+    margin:0!important;
+    border-radius:32px!important;
+    background:
+      linear-gradient(145deg,rgba(15,23,42,.08),rgba(2,6,23,.18)),
+      url("http://plcl.me/images/HJqXV.jpeg") center center / cover no-repeat !important;
+  }
+
+  .next-match-section{
+    margin:0!important;
+    min-height:430px!important;
+    max-height:560px!important;
+    overflow:hidden!important;
+    border-radius:32px!important;
+  }
+
+  .next-match-section .mb-4{
+    margin-bottom:16px!important;
+  }
+
+  .upcoming-grid{
+    grid-template-columns:repeat(2,minmax(240px,1fr))!important;
+    gap:16px!important;
+    max-height:455px!important;
+    overflow-y:auto!important;
+  }
+
+  .fixture-card{
+    min-height:178px!important;
+  }
+
+  .completed-section-clean{
+    max-width:1360px!important;
+    margin-top:34px!important;
+    border-radius:32px!important;
+  }
+
+  #completedList{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(240px,1fr))!important;
+    gap:16px!important;
+  }
+}
+
+/* DESKTOP BESAR */
+@media(min-width:1536px){
+  section.max-w-\[1500px\],
+  .result-area-clean,
+  .completed-section-clean{
+    max-width:1500px!important;
+  }
+
+  .result-area-clean{
+    grid-template-columns:minmax(520px, 1fr) minmax(640px, 1fr)!important;
+  }
+
+  .upcoming-grid{
+    grid-template-columns:repeat(2,minmax(280px,1fr))!important;
+  }
+
+  #completedList{
+    grid-template-columns:repeat(4,minmax(280px,1fr))!important;
+  }
+}
+
+/* MOBILE PORTRAIT: tetap normal, tidak landscape */
+@media(max-width:768px) and (orientation:portrait){
+  body{
+    min-width:0!important;
+    overflow-x:hidden!important;
+  }
+  main{width:auto!important;}
+  .main-grid-clean{display:block!important;}
+  .result-area-clean,
+  .completed-section-clean{
+    max-width:100%!important;
+    width:100%!important;
+  }
+  #emptyState{
+    max-width:330px!important;
+    width:88vw!important;
+    aspect-ratio:1/1!important;
+    margin:0 auto 14px!important;
+  }
+  .upcoming-grid,
+  #completedList{
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+  }
+  .fixture-card{min-height:auto!important;}
+}
+
+/* MOBILE LANDSCAPE: gambar kiri lebih kecil, NEXT MATCH kanan, COMPLETED tetap bawah */
+@media(max-width:932px) and (orientation:landscape){
+  body{
+    min-width:0!important;
+    overflow-x:hidden!important;
+  }
+  header .max-w-\[1500px\]{
+    padding-top:8px!important;
+    padding-bottom:8px!important;
+  }
+  header img{height:28px!important;}
+  header .font-orbitron{font-size:17px!important;}
+  header .tracking-\[4px\]{font-size:7px!important;letter-spacing:2px!important;}
+  .login-btn{padding:7px 12px!important;font-size:11px!important;border-radius:11px!important;}
+
+  section.max-w-\[1500px\]{
+    padding-top:14px!important;
+    padding-left:14px!important;
+    padding-right:14px!important;
+  }
+  .main-grid-clean{display:block!important;}
+  .result-area-clean{
+    max-width:100%!important;
+    width:100%!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:minmax(230px,34vw) 1fr!important;
+    gap:14px!important;
+    align-items:start!important;
+  }
+  #emptyState{
+    width:100%!important;
+    max-width:320px!important;
+    aspect-ratio:1/1!important;
+    margin:0 auto!important;
+    border-radius:24px!important;
+    padding:0!important;
+  }
+  .next-match-section{
+    margin:0!important;
+    border-radius:24px!important;
+    padding:14px!important;
+    min-height:0!important;
+  }
+  .next-match-section .mb-4{margin-bottom:10px!important;}
+  .next-match-section h2{font-size:20px!important;line-height:1.1!important;}
+  .next-match-section .tracking-\[3px\]{font-size:9px!important;letter-spacing:2px!important;}
+  .upcoming-grid{
+    grid-template-columns:repeat(2,minmax(190px,1fr))!important;
+    gap:10px!important;
+    max-height:calc(100vh - 170px)!important;
+  }
+  .fixture-card{
+    min-height:auto!important;
+    border-radius:20px!important;
+    padding:12px!important;
+  }
+  .fixture-head{margin-bottom:8px!important;}
+  .fixture-badge{font-size:8px!important;padding:6px 8px!important;letter-spacing:1.4px!important;}
+  .fixture-date{font-size:9px!important;}
+  .fixture-body{gap:7px!important;}
+  .mini-flag{width:34px!important;height:23px!important;border-radius:6px!important;}
+  .fixture-team-name{font-size:10px!important;margin-top:5px!important;}
+  .fixture-score{min-width:58px!important;}
+  .fixture-score-main{font-size:18px!important;}
+  .fixture-score-sub{font-size:8px!important;margin-top:4px!important;}
+  .fixture-btn{margin-top:9px!important;padding:9px 8px!important;border-radius:13px!important;font-size:10px!important;}
+
+  .completed-section-clean{
+    max-width:100%!important;
+    width:calc(100% - 28px)!important;
+    margin:14px auto 0!important;
+    border-radius:24px!important;
+    padding:14px!important;
+  }
+  #completedList{
+    grid-template-columns:repeat(2,minmax(190px,1fr))!important;
+    gap:10px!important;
+  }
+  .match-card{border-radius:20px!important;padding:12px!important;}
+}
+  
+
+/* === FINAL DESKTOP CLEAN LAYOUT === */
+/* Desktop: kiri gambar, kanan NEXT MATCH rata, bawah COMPLETED MATCH rapi */
+@media (min-width:1024px){
+  section.max-w-\[1500px\]{
+    max-width:1460px!important;
+    padding-top:26px!important;
+  }
+
+  .result-area-clean{
+    max-width:1460px!important;
+    width:100%!important;
+    display:grid!important;
+    grid-template-columns:minmax(560px, 1fr) minmax(560px, 1fr)!important;
+    gap:34px!important;
+    align-items:stretch!important;
+  }
+
+  #emptyState{
+    width:100%!important;
+    max-width:none!important;
+    height:540px!important;
+    min-height:540px!important;
+    max-height:540px!important;
+    aspect-ratio:auto!important;
+    margin:0!important;
+    border-radius:30px!important;
+    background:
+      linear-gradient(145deg,rgba(15,23,42,.08),rgba(2,6,23,.14)),
+      url("http://plcl.me/images/HJqXV.jpeg") center center / cover no-repeat !important;
+    box-shadow:0 24px 70px rgba(0,0,0,.45),0 0 42px rgba(168,85,247,.22)!important;
+  }
+
+  .next-match-section{
+    height:540px!important;
+    min-height:540px!important;
+    max-height:540px!important;
+    margin:0!important;
+    padding:28px!important;
+    border-radius:30px!important;
+    overflow:hidden!important;
+    display:flex!important;
+    flex-direction:column!important;
+  }
+
+  .next-match-section > .flex{
+    margin-bottom:20px!important;
+  }
+
+  .next-match-section .tracking-\[3px\]{
+    font-size:12px!important;
+    letter-spacing:5px!important;
+  }
+
+  #upcomingList{
+    flex:1!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:18px!important;
+    max-height:none!important;
+    height:100%!important;
+    overflow-y:auto!important;
+    padding-right:4px!important;
+  }
+
+  #upcomingList .fixture-card{
+    min-height:178px!important;
+    height:100%!important;
+    padding:18px!important;
+    border-radius:25px!important;
+  }
+
+  #upcomingList .fixture-score-main{
+    font-size:30px!important;
+  }
+
+  .completed-section-clean{
+    max-width:1460px!important;
+    width:100%!important;
+    margin-top:34px!important;
+    padding:22px 24px!important;
+    border-radius:30px!important;
+    overflow:hidden!important;
+  }
+
+  .completed-section-clean > .flex{
+    margin-bottom:16px!important;
+  }
+
+  .completed-section-clean .tracking-\[3px\]{
+    font-size:12px!important;
+    letter-spacing:5px!important;
+  }
+
+  #completedList{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:16px!important;
+  }
+
+  .completed-card{
+    min-height:108px!important;
+    padding:14px 16px!important;
+    border-radius:22px!important;
+    background:linear-gradient(135deg,rgba(22,18,46,.94),rgba(22,22,24,.9))!important;
+  }
+
+  .completed-top{
+    display:flex!important;
+    justify-content:space-between!important;
+    align-items:center!important;
+    gap:10px!important;
+    margin-bottom:12px!important;
+  }
+
+  .completed-top span{
+    font-size:10px!important;
+    font-weight:900!important;
+    letter-spacing:.9px!important;
+    color:#fde047!important;
+    white-space:nowrap!important;
+  }
+
+  .completed-top small{
+    font-size:10px!important;
+    color:#a1a1aa!important;
+    white-space:nowrap!important;
+  }
+
+  .completed-body{
+    display:grid!important;
+    grid-template-columns:1fr 88px 1fr!important;
+    align-items:center!important;
+    gap:10px!important;
+  }
+
+  .completed-team{
+    min-width:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    text-align:center!important;
+    gap:6px!important;
+  }
+
+  .completed-team .mini-flag{
+    width:42px!important;
+    height:28px!important;
+    margin:0!important;
+  }
+
+  .completed-team strong{
+    font-size:11px!important;
+    line-height:1.1!important;
+    font-weight:900!important;
+    max-width:100%!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    white-space:nowrap!important;
+  }
+
+  .completed-score{
+    text-align:center!important;
+  }
+
+  .completed-score b{
+    display:block!important;
+    font-family:'Orbitron',sans-serif!important;
+    color:#fde047!important;
+    font-size:18px!important;
+    line-height:1!important;
+    font-weight:900!important;
+    text-shadow:0 0 18px rgba(250,204,21,.38)!important;
+    white-space:nowrap!important;
+  }
+
+  .completed-score small{
+    display:block!important;
+    font-size:9px!important;
+    color:#71717a!important;
+    margin-top:7px!important;
+    white-space:nowrap!important;
+  }
+}
+
+@media (min-width:1024px) and (max-width:1280px){
+  .result-area-clean{
+    grid-template-columns:minmax(470px,1fr) minmax(470px,1fr)!important;
+    gap:24px!important;
+  }
+  #emptyState,
+  .next-match-section{
+    height:500px!important;
+    min-height:500px!important;
+    max-height:500px!important;
+  }
+  .next-match-section{padding:22px!important;}
+  #upcomingList{gap:14px!important;}
+  #upcomingList .fixture-card{padding:14px!important;min-height:165px!important;}
+  #completedList{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important;}
+  .completed-body{grid-template-columns:1fr 72px 1fr!important;gap:6px!important;}
+  .completed-score b{font-size:16px!important;}
+  .completed-team strong{font-size:10px!important;}
+}
+
+/* Mobile tetap normal/portrait */
+@media (max-width:768px){
+  .result-area-clean{
+    display:block!important;
+  }
+  #emptyState{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+  .next-match-section{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+  #upcomingList,
+  #completedList{
+    grid-template-columns:1fr!important;
+  }
+}
+
+  
+
+/* === RACIKAN TERAKHIR - NO LANDSCAPE LOCK === */
+/* Desktop & mobile tidak dipaksa landscape. Layout tetap natural. */
+html, body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden!important;
+  transform:none!important;
+}
+
+/* Desktop: kiri card prediksi/gambar, kanan next match. Completed tetap bawah. */
+@media (min-width:1024px){
+  section.max-w-\[1500px\]{
+    max-width:1460px!important;
+    padding-top:26px!important;
+  }
+
+  .result-area-clean{
+    max-width:1460px!important;
+    width:100%!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:minmax(520px,1fr) minmax(560px,1fr)!important;
+    gap:34px!important;
+    align-items:start!important;
+  }
+
+  #emptyState,
+  #resultsPanel,
+  .next-match-section{
+    height:540px!important;
+    min-height:540px!important;
+    max-height:540px!important;
+    border-radius:30px!important;
+    margin:0!important;
+  }
+
+  #emptyState{
+    width:100%!important;
+    max-width:none!important;
+    aspect-ratio:auto!important;
+    padding:0!important;
+    background:
+      linear-gradient(145deg,rgba(15,23,42,.08),rgba(2,6,23,.14)),
+      url("http://plcl.me/images/HJqXV.jpeg") center center / cover no-repeat !important;
+  }
+
+  #resultsPanel{
+    width:100%!important;
+    max-width:none!important;
+    overflow-y:auto!important;
+    padding:24px!important;
+  }
+
+  #resultsPanel .result-score-card{
+    min-width:0!important;
+    width:100%!important;
+    max-width:430px!important;
+    margin:0 auto!important;
+    padding:20px 22px!important;
+  }
+
+  #resultsPanel .result-score-num{
+    font-size:46px!important;
+  }
+
+  #resultsPanel .grid.grid-cols-3{
+    gap:12px!important;
+    margin-bottom:18px!important;
+  }
+
+  #resultsPanel .grid.grid-cols-3 > div{
+    padding:14px!important;
+  }
+
+  #resultsPanel .grid.grid-cols-3 .text-4xl,
+  #resultsPanel .grid.grid-cols-3 .md\:text-5xl{
+    font-size:34px!important;
+    line-height:1!important;
+  }
+
+  .next-match-section{
+    padding:28px!important;
+    overflow:hidden!important;
+    display:flex!important;
+    flex-direction:column!important;
+  }
+
+  #upcomingList{
+    flex:1!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:18px!important;
+    height:100%!important;
+    max-height:none!important;
+    overflow-y:auto!important;
+    padding-right:4px!important;
+  }
+
+  #upcomingList .fixture-card{
+    min-height:178px!important;
+    padding:18px!important;
+    border-radius:25px!important;
+  }
+
+  .completed-section-clean{
+    max-width:1460px!important;
+    width:100%!important;
+    margin:34px auto 0!important;
+    padding:22px 24px!important;
+    border-radius:30px!important;
+    overflow:hidden!important;
+  }
+
+  #completedList{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:16px!important;
+  }
+}
+
+/* Completed Match: rapi kanan-kiri untuk semua ukuran */
+.completed-card{
+  min-height:112px!important;
+  padding:14px 16px!important;
+  border-radius:22px!important;
+  background:linear-gradient(135deg,rgba(22,18,46,.96),rgba(24,24,24,.92))!important;
+}
+
+.completed-top{
+  display:flex!important;
+  justify-content:space-between!important;
+  align-items:center!important;
+  gap:10px!important;
+  margin-bottom:12px!important;
+}
+
+.completed-top span{
+  font-size:10px!important;
+  font-weight:900!important;
+  letter-spacing:.7px!important;
+  color:#fde047!important;
+  white-space:nowrap!important;
+}
+
+.completed-top small{
+  font-size:10px!important;
+  color:#a1a1aa!important;
+  white-space:nowrap!important;
+}
+
+.completed-body{
+  display:grid!important;
+  grid-template-columns:1fr 82px 1fr!important;
+  align-items:center!important;
+  gap:10px!important;
+}
+
+.completed-team{
+  min-width:0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  gap:6px!important;
+}
+
+.completed-team .mini-flag{
+  width:42px!important;
+  height:28px!important;
+  margin:0!important;
+  flex:0 0 auto!important;
+}
+
+.completed-team strong{
+  width:100%!important;
+  max-width:100%!important;
+  display:block!important;
+  font-size:11px!important;
+  line-height:1.1!important;
+  font-weight:900!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+}
+
+.completed-score{
+  min-width:0!important;
+  text-align:center!important;
+}
+
+.completed-score b{
+  display:block!important;
+  font-family:'Orbitron',sans-serif!important;
+  color:#fde047!important;
+  font-size:18px!important;
+  line-height:1!important;
+  font-weight:900!important;
+  text-shadow:0 0 18px rgba(250,204,21,.38)!important;
+  white-space:nowrap!important;
+}
+
+.completed-score small{
+  display:block!important;
+  font-size:9px!important;
+  color:#71717a!important;
+  margin-top:7px!important;
+  white-space:nowrap!important;
+}
+
+/* Mobile: portrait normal, tidak landscape, completed tetap kanan-kiri */
+@media (max-width:768px){
+  body{
+    min-width:0!important;
+    overflow-x:hidden!important;
+  }
+
+  section.max-w-\[1500px\]{
+    padding-left:12px!important;
+    padding-right:12px!important;
+    padding-top:16px!important;
+  }
+
+  .main-grid-clean,
+  .result-area-clean{
+    display:block!important;
+    max-width:100%!important;
+    width:100%!important;
+  }
+
+  #emptyState{
+    width:92vw!important;
+    max-width:360px!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:1/1!important;
+    margin:0 auto 16px!important;
+    border-radius:24px!important;
+  }
+
+  #resultsPanel{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:16px!important;
+    border-radius:24px!important;
+    margin-bottom:16px!important;
+  }
+
+  #resultsPanel .result-score-card{
+    min-width:0!important;
+    width:100%!important;
+    padding:16px!important;
+  }
+
+  #resultsPanel .result-score-num{
+    font-size:38px!important;
+  }
+
+  .next-match-section,
+  .completed-section-clean{
+    width:100%!important;
+    max-width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:16px auto 0!important;
+    padding:14px!important;
+    border-radius:24px!important;
+  }
+
+  #upcomingList,
+  #completedList{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+    max-height:none!important;
+    overflow:visible!important;
+    padding-right:0!important;
+  }
+
+  .completed-card{
+    width:100%!important;
+    min-height:104px!important;
+    padding:13px 14px!important;
+    border-radius:18px!important;
+  }
+
+  .completed-top{
+    margin-bottom:10px!important;
+  }
+
+  .completed-top span{
+    font-size:9px!important;
+    letter-spacing:.5px!important;
+  }
+
+  .completed-top small{
+    font-size:9px!important;
+  }
+
+  .completed-body{
+    grid-template-columns:minmax(0,1fr) 70px minmax(0,1fr)!important;
+    gap:8px!important;
+  }
+
+  .completed-team .mini-flag{
+    width:38px!important;
+    height:25px!important;
+  }
+
+  .completed-team strong{
+    font-size:10px!important;
+  }
+
+  .completed-score b{
+    font-size:16px!important;
+  }
+
+  .completed-score small{
+    font-size:8px!important;
+    margin-top:5px!important;
+  }
+}
+
+@media (max-width:380px){
+  .completed-body{
+    grid-template-columns:minmax(0,1fr) 58px minmax(0,1fr)!important;
+    gap:6px!important;
+  }
+  .completed-team strong{font-size:9px!important;}
+  .completed-score b{font-size:14px!important;}
+}
+
   </style>
 </head>
 <body class="text-white overflow-x-hidden bg-main">
@@ -167,7 +941,7 @@ body.predictor-open #emptyState{
             <div class="glass rounded-[1.5rem] p-6"><h3 class="text-purple-300 font-black tracking-widest text-sm mb-4"><i class="fas fa-chart-line mr-2"></i> AI MATCH ANALYSIS</h3><div id="analysisText" class="text-zinc-300 leading-relaxed"></div></div>
           </div>
 
-          <div class="glass luxury rounded-[2rem] p-5 md:p-6">
+          <div class="glass luxury rounded-[2rem] p-5 md:p-6 next-match-section">
             <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
               <div><div class="text-xs tracking-[3px] text-purple-300 font-black">FIFA WORLD CUP 2026</div><h2 class="text-2xl md:text-3xl font-black"></h2></div>
               <div id="updatedAt" class="flex items-center gap-2 text-xs font-bold text-green-400">
@@ -180,12 +954,12 @@ body.predictor-open #emptyState{
         </div>
       </div>
 
-      <div class="mt-7 glass luxury rounded-[2rem] p-5 md:p-6">
+      <div class="mt-7 glass luxury rounded-[2rem] p-5 md:p-6 completed-section-clean">
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
           <div><div class="text-xs tracking-[3px] text-yellow-300 font-black">COMPLETED MATCH</div><h2 class="text-2xl md:text-3xl font-black"></h2></div>
           <div class="text-xs text-zinc-400"></div>
         </div>
-        <div id="completedList" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4"></div>
+        <div id="completedList" class="upcoming-grid"></div>
       </div>
     </section>
   </main>
@@ -208,8 +982,8 @@ body.predictor-open #emptyState{
     function matchKey(m){return [m.row||'',m.date||'',m.time||'',m.team1||'',m.team2||''].join('|')}
     function sortUpcomingMatches(list){const monthMap={januari:0,january:0,februari:1,february:1,maret:2,march:2,april:3,mei:4,may:4,juni:5,june:5,juli:6,july:6,agustus:7,august:7,september:8,oktober:9,october:9,november:10,desember:11,december:11};function parseDateTime(m){const d=String(m.date||'').toLowerCase(),t=String(m.time||'');const dm=d.match(/(\d{1,2})\s+([a-zA-ZÀ-ÿ]+)/),tm=t.match(/(\d{1,2})[:.](\d{2})/);const day=dm?Number(dm[1]):99,month=dm?(monthMap[dm[2]]??11):11,hour=tm?Number(tm[1]):23,min=tm?Number(tm[2]):59;return new Date(2026,month,day,hour,min).getTime()}return [...list].sort((a,b)=>parseDateTime(a)-parseDateTime(b))}
     function renderUpcomingCard(m){const key=matchKey(m),isRevealed=revealedPredictors.has(key);const centerScore=isRevealed&&m.predictor?esc(m.predictor):'0 - 0';const btnText=isRevealed&&m.predictor?`PREDICTED ${esc(m.predictor)}`:'PREDICTOR';return `<div class="fixture-card"><div class="fixture-head"><span class="fixture-badge">NEXT MATCH</span><span class="fixture-date">${esc(m.date)} ${esc(m.time)}</span></div><div class="fixture-body"><div class="fixture-team"><img class="mini-flag mx-auto" onerror="this.src='${fallbackFlag}'" src="${esc(m.team1Logo)}"><div class="fixture-team-name">${esc(m.team1).toUpperCase()}</div></div><div class="fixture-score"><div class="fixture-score-main">${centerScore}</div><div class="fixture-score-sub">KICK OFF</div></div><div class="fixture-team"><img class="mini-flag mx-auto" onerror="this.src='${fallbackFlag}'" src="${esc(m.team2Logo)}"><div class="fixture-team-name">${esc(m.team2).toUpperCase()}</div></div></div><button onclick="selectPredictorByKey('${esc(key)}')" class="fixture-btn ${isRevealed?'revealed':''}"><i class="fas fa-wand-magic-sparkles mr-2"></i>${btnText}</button></div>`}
-    function renderCompletedCard(m){return `<div class="match-card glass rounded-[1.5rem] p-4 luxury"><div class="flex items-center justify-between gap-2 mb-3"><span class="text-[10px] font-black tracking-widest text-yellow-300">FULLTIME RESULT</span><span class="text-[10px] text-zinc-400">${esc(m.date)}</span></div><div class="grid grid-cols-[1fr_auto_1fr] items-center gap-2"><div class="text-center"><img class="mini-flag mx-auto mb-2" onerror="this.src='${fallbackFlag}'" src="${esc(m.team1Logo)}"><div class="font-black text-xs md:text-sm">${esc(m.team1).toUpperCase()}</div></div><div class="text-center"><div class="font-orbitron text-lg md:text-2xl font-black text-yellow-300">${esc(m.time||'FT')}</div><div class="text-[10px] text-zinc-500 mt-1">FULL TIME</div></div><div class="text-center"><img class="mini-flag mx-auto mb-2" onerror="this.src='${fallbackFlag}'" src="${esc(m.team2Logo)}"><div class="font-black text-xs md:text-sm">${esc(m.team2).toUpperCase()}</div></div></div></div>`}
-    function renderLists(){const upcoming=sortUpcomingMatches(sheetData.upcoming);el('upcomingList').className='upcoming-grid max-h-[560px] overflow-y-auto scroll-soft pr-1';el('upcomingList').innerHTML=upcoming.length?upcoming.map(m=>renderUpcomingCard(m)).join(''):`<div class="text-zinc-400 p-4">Belum ada data upcoming di kolom I:P.</div>`;el('completedList').innerHTML=sheetData.completed.length?sheetData.completed.map(m=>renderCompletedCard(m)).join(''):`<div class="text-zinc-400 p-4">Belum ada data completed di kolom A:G.</div>`}
+    function renderCompletedCard(m){return `<div class="match-card completed-card glass rounded-[1.5rem] p-4 luxury"><div class="completed-top"><span>FULLTIME RESULT</span><small>FINISHED</small></div><div class="completed-body"><div class="completed-team"><img class="mini-flag" onerror="this.src='${fallbackFlag}'" src="${esc(m.team1Logo)}"><strong>${esc(m.team1).toUpperCase()}</strong></div><div class="completed-score"><b>${esc(m.time||'FT')}</b><small>FULL TIME</small></div><div class="completed-team"><img class="mini-flag" onerror="this.src='${fallbackFlag}'" src="${esc(m.team2Logo)}"><strong>${esc(m.team2).toUpperCase()}</strong></div></div></div>`}
+    function renderLists(){const upcoming=sortUpcomingMatches(sheetData.upcoming);el('upcomingList').className='upcoming-grid max-h-[560px] overflow-y-auto scroll-soft pr-1';el('upcomingList').innerHTML=upcoming.length?upcoming.map(m=>renderUpcomingCard(m)).join(''):`<div class="text-zinc-400 p-4">Belum ada data upcoming di kolom I:P.</div>`;el('completedList').className='upcoming-grid';el('completedList').innerHTML=sheetData.completed.length?sheetData.completed.map(m=>renderCompletedCard(m)).join(''):`<div class="text-zinc-400 p-4">Belum ada data completed di kolom A:G.</div>`}
     const API_URL = 'https://script.google.com/macros/s/AKfycbzrbQmHkjZpMdtJlkW27KuEwD6vXeHS_H8WlEoULc08VRcujvgiFGBJQqdpaVSiXSnM/exec';
 
     function loadJsonp(url) {
